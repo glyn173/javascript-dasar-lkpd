@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 2</title>
+</head>
+<body>
+    <script>
+        // Buat program yang meminta nilai dan menampilkan 'LULUS' jika nilai >= 70, selain itu tampil 'BELUM LULUS'.
+        let nilai = parseInt(prompt("Masukkan nilai Anda:"));
+
+        if (nilai >= 70) {
+            alert("Anda Lulus");
+        } else {
+            alert("Anda Belum Lulus");
+        }
+
+        // Buat program dengan usia: <13 Anak-anak, 13-17 Remaja, >=18 Dewasa (gunakan if else if).
+        let userAge = parseInt(prompt("Berapa umur Anda?"))
+
+        if (userAge < 13) {
+            alert("Anda anak-anak");
+        } else if (userAge >= 13 && userAge <= 17) {
+            alert("Anda Remaja");
+        } else {
+            alert("Anda dewasa");
+        }   
+    </script>   
+    <!--
+    Refleksi
+1. Jelaskan perbedaan antara if dan else if.
+2. Apa yang terjadi bila semua kondisi salah?
+
+Jawwaban
+1. if digunakan sebagai kondisi pertama yang dicek, dan else if digunakan apabila kondisi pertama (if) tidak memenuhi
+2. Kalau ada else, maka bagian else akan dijalankan. Kalau tidak ada else, program akan diam/tidak melakukan apa-apa.
+    -->
+</body>
+</html>
