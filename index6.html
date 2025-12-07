@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 6</title>
+</head>
+<body>
+    <b>Percobaan menggunakan .style.color</b>
+    <p id="judul">Belajar JavaScript itu seru!</p>
+    <button onclick="warna()">Ubah Warna</button>
+    <br>
+    <b>Percobaan menggunakan createElement dan appendChild</b>
+    <div id="wadah"></div>
+    <button onclick="tambahItem()">Tambah Paragraf</button>
+
+    <script>
+    function warna() {
+        document.getElementById("judul").style.color = "red";
+    }
+
+    function tambahItem() {
+    let p = document.createElement("p");  // buat elemen <p>
+    p.innerHTML = "Halo duniaaa!"; // isi teksnya
+
+        document.getElementById("wadah").appendChild(p); // tempel ke div
+    }
+    </script>
+     <!--
+Refleksi
+1. Apa fungsi document.getElementById()?
+2. Bagaimana cara menambah elemen baru ke halaman?
+
+Jawaban
+1. document.getElementById() berfungsi untuk mengambil elemen HTML berdasarkan ID-nya, sehingga elemen tersebut bisa diubah isinya, gayanya, atau dimanipulasi dengan JavaScript
+2. menggunakan createElement(), memberi isi pada elemen tersebut menggunakan innerHTML, lalu menempelkannya ke bagian HTML menggunakan appendChild()
+    -->
+</body>
+</html>
