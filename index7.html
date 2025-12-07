@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 7</title>
+</head>
+<body>
+    <p id="paragraf">Ini paragraf yang bisa disembunyikan.</p>
+    <button onclick="hide()">Sembunyikan</button>
+    <br>
+    <input type="text" oninput="updateText()" id="inputan">
+    <p id="hasil"></p>
+
+    <script>
+    // Buat tombol 'Sembunyikan' yang menyembunyikan sebuah paragraf saat diklik.
+    function hide() {
+        document.getElementById("paragraf").style.display = "none";
+    }
+
+    // Buat input teks yang menampilkan hasil live (oninput) ke elemen .
+    function updateText() {
+    let teks = document.getElementById("inputan").value;
+        document.getElementById("hasil").innerHTML = teks;
+    }
+    </script>
+    <!--
+Refleksi
+1. Apa perbedaan onclick dan onmouseover?
+2. Mengapa event penting untuk interaktivitas?
+
+Jawaban
+1. onclick terjadi ketika elemen diklik, sedangkan onmouseover terjadi ketika kursor hanya lewat atau berada di atas elemen tanpa perlu mengkliknya
+2. Event penting karena membuat halaman web menjadi interaktif, sehingga website dapat merespons tindakan pengguna secara langsung dan terasa hidup, bukan hanya tampilan statis
+    -->
+</body>
+</html>
