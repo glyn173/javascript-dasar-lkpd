@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 8</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+  <body>
+    <h3>Form Pendaftaran</h3>
+
+    <input type="text" id="nama" placeholder="Nama lengkap"><br><br>
+    <input type="email" id="email" placeholder="Email"><br><br>
+    <input type="password" id="password" placeholder="Kata sandi"><br><br>
+
+    <button onclick="validasi()">Daftar</button>
+
+    <p id="pesan" style="color:red;"></p>
+
+    <script>
+      function validasi() {
+        let nama = document.getElementById("nama").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("password").value;
+
+        // ambil tempat menampilkan pesan
+        let pesan = document.getElementById("pesan");
+
+        // cek data
+        if (nama === "" || email === "" || pass === "") {
+          pesan.innerHTML = "❌ Semua kolom wajib diisi!";
+        } 
+        else if (pass.length < 8) {
+          pesan.innerHTML = "❌ Password harus minimal 8 karakter!";
+        } 
+        else if (!email.includes("@")) {
+          pesan.innerHTML = "❌ Email tidak valid! harus ada '@'";
+        } 
+        else {
+          pesan.style.color = "green";
+          pesan.innerHTML = "✔️ Pendaftaran berhasil!";
+        }
+      }
+    </script>
+    <!--
+Refleksi
+1. Mengapa validasi penting sebelum data dikirim ke server?
+2. Apa risiko jika tidak melakukan validasi?
+
+Jawaban
+1. Supaya data yang masuk bersih, benar, dan tidak error
+Menghindari kesalahan seperti email palsu, password terlalu pendek, dan form kosong
+Mengurangi beban server karena tidak perlu memproses data yang salah
+2. Kalau form tidak divalidasi, pengguna bisa mengirim data sembarangan seperti nama kosong atau email yang salah. Hal itu bisa bikin sistem error dan data yang tersimpan jadi berantakan. Selain itu, form tanpa validasi juga bisa membahayakan keamanan karena orang bisa memasukkan input aneh yang bisa merusak sistem
+    -->
+</body>
+</html>
