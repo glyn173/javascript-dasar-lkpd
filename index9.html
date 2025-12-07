@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+  <style>
+    body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f7f2ff; 
+      }
+
+      h2 {
+        color: #5b4b8a; 
+      }
+
+      .card {
+        width: 350px;
+        padding: 20px;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin: 6px 0;
+        border: 1px solid #cfc8e8; 
+        border-radius: 6px;
+      }
+
+      button {
+        padding: 8px 12px;
+        margin-top: 8px;
+        margin-right: 4px;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+      }
+
+      .btn-daftar {
+        background: #bba5ff;
+      }
+
+      .btn-reset {
+        background: #ffd6e8;
+      }
+
+      #feedback {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+  </style>
+</head>
+
+<body>
+  <h2>Form Pendaftaran</h2>
+
+  <div class="card">
+    <label>Nama Lengkap:</label>
+    <input type="text" id="nama">
+
+    <label>Email:</label>
+    <input type="text" id="email">
+
+    <label>Password:</label>
+    <input type="password" id="password">
+
+    <button onclick="daftar()">Daftar</button>
+    <button onclick="resetForm()">Reset</button>
+
+    <p id="feedback"></p>
+  </div>
+
+  <script>
+    // validasi & daftar
+    function daftar() {
+      let nama = document.getElementById("nama").value;
+      let email = document.getElementById("email").value;
+      let pass = document.getElementById("password").value;
+      let feedback = document.getElementById("feedback");
+
+      // mengecek apabila kosong
+      if (nama === "" || email === "" || pass === "") {
+        feedback.innerHTML = "Semua kolom wajib diisi!";
+        feedback.style.color = "red";
+      }
+      // mengecek pw min 8 karakter
+      else if (pass.length < 8) {
+        feedback.innerHTML = "Password minimal 8 karakter!";
+        feedback.style.color = "red";
+      }
+      // mengecek email harus ada'@'
+      else if (!email.includes("@")) {
+        feedback.innerHTML = "Email tidak valid!";
+        feedback.style.color = "red";
+      }
+      else {
+        feedback.innerHTML = "Pendaftaran BERHASIL!";
+        feedback.style.color = "green";
+      }
+    }
+
+    // reset form
+    function resetForm() {
+      document.getElementById("nama").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+
+      document.getElementById("feedback").innerHTML = "";
+    }
+
+  </script>
+    <!--
+Refleksi
+1. Apa tantangan terbesar membuat project ini?
+2. Fitur apa yang ingin kalian tambahkan jika ada waktu lebih?
+
+Jawaban
+1. Tantangan terbesar aku adalah ngatur waktu supaya bisa ngerjain mini project dengan tenang. Kadang aku punya banyak tugas dan materi lain, jadi harus pinter pinter bagi waktu agar project ini selesai dan tetap paham sama setiap bagiannya
+2. Kalau ada waktu lebih, aku ingin menambahkan fitur penyimpanan data user. Jadi nanti jika seseorang sudah pernah daftar, datanya bisa disimpan misalnya pakai localStorage agar sistem bisa ngecek dan memunculkan “kamu sudah terdaftar”
+    -->
+</body>
+</html>
