@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD 5</title>
+</head>
+<body>
+    <script>
+
+        // Buat array berisi 5 nama teman dan tampilkan semuanya menggunakan for.
+        let teman = ["Mustika", "Sasti", "Azqia", "Zallfa", "Silvia"];
+
+        for (let i = 0; i < teman.length; i++) {
+            console.log(teman[i]);
+        }
+
+        //  Buat array nilai siswa dan hitung rata-ratanya.
+        let nilai = [100, 70, 80, 75, 95];
+        let total = 0;
+
+        for (let i = 0; i < nilai.length; i++) {
+            total += nilai[i];
+        }
+
+        let rataRata = total / nilai.length
+
+        console.log(rataRata)
+    </script>
+    <!--
+Refleksi
+1. Apa keuntungan menggunakan array dibanding variabel terpisah?
+2. Bagaimana cara menambahkan elemen baru ke array?
+
+Jawaban
+1. Memperpendek variabel, sehingga kita tidak perlu membuat banyak variabel, cukup dengan membuat satu variabel saja dengan isi berbagai data. Keuntungannya selain itu, bisa digunakan juga untuk looping dan mudah untuk menambah/mengurangi data
+2. Bisa dengan menggunakan manipulasi array yaitu "push". Dengan cara memanggil nama variabel disertai .push dilanjut dengan value nya, seperti ini: namaVariabel.push(value), maka value akan tersimpan di data paling belakang.
+    -->
+</body>
+</html>
